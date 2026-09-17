@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>환율 변환기</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <h1>환율 변환기</h1>
+
+    <!-- 변환할 금액 입력 -->
+    <div class="field">
+      <label for="amount">금액</label>
+      <input type="number" id="amount" placeholder="금액을 입력하세요" min="0" />
+    </div>
+
+    <!-- 변환 기준 통화(From)와 대상 통화(To) 선택 -->
+    <div class="field-row">
+      <div class="field">
+        <label for="from-currency">From</label>
+        <select id="from-currency">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="KRW">KRW</option>
+          <option value="JPY">JPY</option>
+        </select>
+      </div>
+
+      <!-- From/To 통화를 서로 바꾸는 버튼 -->
+      <div class="swap-wrap">
+        <button id="swap-btn" type="button" aria-label="통화 교환">&#8646;</button>
+      </div>
+
+      <div class="field">
+        <label for="to-currency">To</label>
+        <select id="to-currency">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="KRW">KRW</option>
+          <option value="JPY">JPY</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- 클릭 시 main.js에서 환율 API를 호출해 변환 -->
+    <button id="convert-btn">변환하기</button>
+
+    <!-- 변환 결과 또는 오류 메시지 표시 영역 -->
+    <div id="result" class="result"></div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
